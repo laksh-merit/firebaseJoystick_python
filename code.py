@@ -3,14 +3,13 @@ from firebase_admin import credentials
 from firebase_admin import db
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('selfcar-ai001-firebase-adminsdk-oxa4s-bcb08cd9ab.json')
+cred = credentials.Certificate('File from your firebase DB')
 
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://selfcar-ai001-default-rtdb.firebaseio.com/'
+    'databaseURL': 'link of your firebase DB'
 })
 
-# As an admin, the app has access to read and write all data, regradless of Security Rules
 values = db.reference('firebaseJoystick')
 print(values.get())
 
